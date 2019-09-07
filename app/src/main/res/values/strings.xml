@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Homework 3</string>
+    <string name="dummy_text">Dummy Text</string>
+    <string name="action_exit">Exit</string>
+    <string name="title_activity_photo_details">PhotoDetailsActivity</string>
+    <string name="photo_title_label">Photo title:</string>
+    <string name="album_label">From album:</string>
+    <string name="photo_id_label">Photo ID:</string>
+    <string name="photo_item_tag">photo_item_tag</string>
+
 </resources>
