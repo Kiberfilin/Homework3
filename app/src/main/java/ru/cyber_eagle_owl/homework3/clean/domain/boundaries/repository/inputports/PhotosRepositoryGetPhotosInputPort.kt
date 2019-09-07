@@ -1,10 +1,9 @@
 package ru.cyber_eagle_owl.homework3.clean.domain.boundaries.repository.inputports
 
-import ru.cyber_eagle_owl.homework3.clean.domain.boundaries.repository.outputports.PhotosRepositoryGetPhotosOutputPort
+import io.reactivex.Single
+import ru.cyber_eagle_owl.homework3.clean.data.entities.presentation.PhotoPresentationEntity
 
 interface PhotosRepositoryGetPhotosInputPort {
 
-    fun setGetPhotosOutputPort(outputPort: PhotosRepositoryGetPhotosOutputPort)
-
-    fun getPhotos()
+    fun getPhotos(): Single<ArrayList<PhotoPresentationEntity>>
 }

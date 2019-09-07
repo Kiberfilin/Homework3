@@ -12,6 +12,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.cyber_eagle_owl.homework3.clean.data.repositories.PhotosRepository
 import ru.cyber_eagle_owl.homework3.clean.data.web.Api
+import ru.cyber_eagle_owl.homework3.clean.domain.boundaries.repository.inputports.PhotosRepositoryGetPhotoDetailsInputPort
+import ru.cyber_eagle_owl.homework3.clean.domain.boundaries.repository.inputports.PhotosRepositoryGetPhotosInputPort
+import ru.cyber_eagle_owl.homework3.di.scopes.ActivityScope
 import ru.cyber_eagle_owl.homework3.di.scopes.ApplicationScope
 import timber.log.Timber
 
@@ -42,11 +45,5 @@ class AppModule(private val application: DaggerApplication) {
             .client(okHttpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .build().create(Api::class.java)
-    }
-
-    @Provides
-    @ApplicationScope
-    fun providePhotosRepository(apiService: Api): PhotosRepository {
-        return PhotosRepository(apiService)
     }
 }
